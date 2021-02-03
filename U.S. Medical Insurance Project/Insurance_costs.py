@@ -17,7 +17,17 @@ class Patient:
         self.region = patient["region"]
         self.charges = patient["charges"]
         # There can be added info if needed, lets make sure to change the the parameters in the exceptions handler
-    #If we want to convert our lass back to a dictionary , lets use this function
+    def __repr__(self):
+       return """ Patients Info:
+        AGE: {age}
+        SEX: {sex}
+        BMI: {bmi}
+        Number of children: {children}
+        Smoker: {smoker}
+        Region: {region}
+        Insurance Costs: {charges}""".format(age = self.age, sex = self.sex, bmi = self.bmi, children = self.children, smoker = self.smoker, region = self.region, charges = self.charges)
+ 
+    #If we want to convert our class back to a dictionary , lets use this function
     def patient_to_dictionary(self):
         patient_dict ={}
         patient_dict["age"] = self.age
@@ -27,3 +37,27 @@ class Patient:
         patient_dict["smoker"] = self.smoker
         patient_dict["region"] = self.region
         patient_dict["charges"] = self.charges
+        return patient_dict
+    
+    # THis next methods return the data asked for from the Patient class
+    def get_patient_age(self):
+        return self.age
+        
+    def get_patient_sex(self):
+        return self.sex
+    
+    def get_patient_bmi(self):
+        return self.bmi
+    
+    def get_patient_children(self):
+        return self.children
+    
+    def get_patient_smoker(self):
+        return self.smoker
+    
+    def get_patient_region(self):
+        return self.region
+    
+    def get_patient_charges(self):
+        return self.charges
+    
